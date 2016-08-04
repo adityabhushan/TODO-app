@@ -1,7 +1,12 @@
+
+
 var http = new XMLHttpRequest();
 http.open("GET", "/tasks", true);
 http.onreadystatechange = function() {
+
 	if (http.readyState == 4 && http.status == 200) {
+        
+
         console.log(http.responseText)
         response = JSON.parse(http.responseText);           
         for (var i = 0; i < response.length; i++) {
@@ -10,6 +15,9 @@ http.onreadystatechange = function() {
             console.log(response[i].name);
             console.log(response[i].owner);
         }
+    }else{
+        console.log("readyState is "+http.readyState);
+        console.log("status is "+http.status);
     }
 }
 http.send();

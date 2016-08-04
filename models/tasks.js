@@ -1,7 +1,6 @@
 module.exports = function(sequelize, DataTypes) {
 // create table menu(name varchar(), description varchar(), quantity INT()..)
     return sequelize.define('tasks', {
-
         name: {
             type: DataTypes.STRING,
             allowNUll: false,
@@ -13,7 +12,7 @@ module.exports = function(sequelize, DataTypes) {
 
         },
         owner: {
-            type: DataTypes.INTEGER,
+            type: DataTypes.STRING,
             allowNUll: false,
 
         },

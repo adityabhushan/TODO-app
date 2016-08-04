@@ -12,6 +12,7 @@ app.get('/tasks', function(request, response) {
     db.tasks.findAll().then(function(items) {
         response.json(items);
     }, function(e) {
+        console.log("ye get meh")
         response.status(500).send();
     });
 });
@@ -39,6 +40,7 @@ app.post('/tasks', function(request, response) {
     }
     db.tasks.create(body).then(function(tasks) {
         response.redirect('/');
+        console.log("redirected to root");
     }, function(e) {
         console.log(e);
     });
